@@ -3,6 +3,7 @@ import 'dart:math';
 
 void main() => runApp(
       MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
           body: AskMe(),
           backgroundColor: Colors.blue,
@@ -25,11 +26,11 @@ class AskMe extends StatefulWidget {
 }
 
 class _AskMeState extends State<AskMe> {
-  int ballAnswer = 1;
+  int ballNumber = 1;
 
   void changeTheState() {
     setState(() {
-      ballAnswer = Random().nextInt(5) + 1;
+      ballNumber = Random().nextInt(5) + 1;
     });
   }
 
@@ -44,7 +45,7 @@ class _AskMeState extends State<AskMe> {
                 changeTheState();
 
                 },
-              child: Image.asset("images/ball$ballAnswer.png"),
+              child: Image.asset("images/ball$ballNumber.png"),
 
             ),
           ),
